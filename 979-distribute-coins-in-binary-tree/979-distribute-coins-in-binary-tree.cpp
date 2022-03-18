@@ -16,28 +16,27 @@ public:
             return ;
         }
         
-    
-        helper(child, child->left, count);
-        helper(child, child->right, count);
+        else{
+            helper(child, child->left, count);
+            helper(child, child->right, count);
             
-        if(child->val > 1){
-            int req = (child->val-1);
-            child->val = 1;
-            parent->val += req;
-            count += req;
+            if(child->val > 1){
+                int req = (child->val-1);
+                parent->val += req;
+                count += req;
+                child->val = 1;
+            }
             
-        }
-            
-        else if(child->val < 1){
-            int req = 1 + abs(child->val);
-            child->val = 1;
-            parent->val -= req;
-            count += req;
-            
+            if(child->val < 1){
+                int req = 1 + abs(child->val);
+                parent->val -= req;
+                child->val = 1;
+                count += req;
                
                 
-        }
+            }
 
+        }
     }
     int distributeCoins(TreeNode* root) {
         int c = 0;
