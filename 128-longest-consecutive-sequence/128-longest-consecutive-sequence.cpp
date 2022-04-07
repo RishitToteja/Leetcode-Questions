@@ -10,8 +10,7 @@ public:
         }
         arr = {};
         
-        for (auto& it: pq) {
-            // Do stuff
+        for (auto& it: pq){
             arr.push_back(it.first);
         }
         if(arr.size() == 0){
