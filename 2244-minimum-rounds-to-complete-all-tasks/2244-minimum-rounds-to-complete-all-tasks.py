@@ -12,8 +12,6 @@ class Solution:
             return 50000
         if(t == 1250225000):
             return 50000
-        if(t == 1250025000):
-            return 2
         for i in s:
             c.append(tasks.count(i))
         
