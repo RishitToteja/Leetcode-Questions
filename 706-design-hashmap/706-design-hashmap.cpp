@@ -1,8 +1,8 @@
 class MyHashMap {
 public:
-    int arr[10000001];
+    int arr[1000001];
     MyHashMap() {
-        for(int i=0; i<10000001; i++){
+        for(int i=0; i<1000001; i++){
             arr[i] = -1;
         }
     }
