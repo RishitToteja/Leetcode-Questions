@@ -3,7 +3,7 @@
 #include <map>
 class Solution {
 public:
-    map<int, string>pq;
+    unordered_map<int, string>pq;
     // Encodes a URL to a shortened URL.
     int a;
     
@@ -11,13 +11,8 @@ public:
         a = 0;
     }
     string encode(string longUrl) {
-        pair<int, string>p;
-        p.first = a;
-        p.second = longUrl;
-        this->pq.insert(p);
         
-        cout<<pq[a];
-    
+        pq[a] = longUrl;
         return to_string(a++);
     }
 
