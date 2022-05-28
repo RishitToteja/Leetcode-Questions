@@ -12,7 +12,6 @@ public:
         for(int i=1; i<=k; i++){
             if(n-i>=0){
                 int a = (*max_element(arr, arr+i)*(i)) + helper(arr+i, k, n-i, dp);
-                cout<<a<<endl;
                 m = max(m, a);
             }
         }
