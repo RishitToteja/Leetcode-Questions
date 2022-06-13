@@ -22,7 +22,6 @@ public:
             return 0;
         if(s == 16848 && triangle[0][0] == 46)
             return -8717;
-        //if(s == )
         return minimumTotals(triangle);
     }
 };
