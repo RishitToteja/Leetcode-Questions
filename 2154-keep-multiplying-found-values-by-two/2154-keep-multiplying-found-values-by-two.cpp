@@ -11,10 +11,13 @@ public:
         else
             return bs(nums, mid+1, ei, key);
     }
+    
     int findFinalValue(vector<int>& nums, int original) {
-        sort(nums.begin(), nums.end());
-        
-        while(bs(nums, 0, nums.size()-1, original)){
+        unordered_map<int, int>pq;
+        for(int i=0; i<nums.size(); i++){
+            pq[nums[i]]++;
+        }
+        while(pq[original]>0){
             original*=2;
         }
         return original;
