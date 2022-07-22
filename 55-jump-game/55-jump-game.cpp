@@ -1,12 +1,14 @@
 class Solution {
 public:
     int *dp;
+    
     Solution(){
         dp = new int[10001];
         for(int i=0; i<10001; i++){
             dp[i]=-1;
         }
     }
+    
     bool canJump(vector<int>& nums, int idx = 0) {
         if(idx == nums.size()-1)
             return true;
