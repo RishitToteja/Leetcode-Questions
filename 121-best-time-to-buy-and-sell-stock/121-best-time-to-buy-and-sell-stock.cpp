@@ -17,7 +17,7 @@ public:
                 minimum.push({prices[i], i});
             }
         }
-        while(!minimum.empty() && minimum.top().second>maximum.second){
+        while(minimum.top().second>maximum.second){
             minimum.pop();
             if(minimum.empty())
                 return 0;
