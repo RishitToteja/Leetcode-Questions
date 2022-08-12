@@ -39,7 +39,7 @@ public:
         vector<int>b;
         helper(root, q->val, b);
         
-        map<int, int>mp;
+        unordered_map<int, int>mp;
         for(int i=0; i<a.size(); i++){
             mp[a[i]]++;
         }
