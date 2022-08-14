@@ -21,13 +21,6 @@ public:
                 if(si<s.size())
                     arr[j][t++] = s[si++];
             }
-            // for(int i=0; i<numRows; i++){
-            //     for(int j=0; j<s.size(); j++){
-            //         cout<<arr[i][j]<<" ";
-            //     }
-            //     cout<<endl;
-            // }
-            // cout<<endl;
         }
         
         
