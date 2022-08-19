@@ -1,26 +1,22 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
 class Solution {
 public:
+    int max(int a, int b){
+        return (a>b)?a:b;
+    }
     int lengthOfLongestSubstring(string s) {
         
         if(s.size() == 1)
             return 1;
         int count = 0;
-        int k = 0;
-        //string temp = "";
         for(int i = 0; i<s.size(); i++){
-            string temp = "";
+            unordered_map<char, int>mp;
             for(int j = i; j<s.size(); j++){
-                if (temp.find(s[j]) != string::npos){
+                if (mp.find(s[j]) != mp.end()){
                     break;
                 }
-                temp+=s[j];
+                mp[s[j]]++;
             }
-            if(temp.size()>count)
-                count = temp.size();
+            count = max(mp.size(), count);
         
     }
         
