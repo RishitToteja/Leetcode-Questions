@@ -8,19 +8,18 @@ public:
         if(s.size() == 1)
             return 1;
         int count = 0;
+        unordered_map<char, int>mp;
+
         for(int i = 0; i<s.size(); i++){
-            unordered_map<char, int>mp;
             for(int j = i; j<s.size(); j++){
                 if (mp.find(s[j]) != mp.end()){
                     break;
                 }
                 mp[s[j]]++;
             }
-            count = max(mp.size(), count);
-        
-    }
-        
+            count = max(mp.size(), count);  
+            mp.clear();
+        }
         return count;
-        
     }
 };
