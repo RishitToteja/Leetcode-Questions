@@ -39,12 +39,7 @@ public:
             }
             j++;
         }
-        // for(int i=0; i<n; i++){
-        //     for(int j=0; j<n; j++){
-        //         cout<<dp[i][j]<<" ";
-        //     }
-        //     cout<<endl;
-        // }
+
         string se = "";
         for(int i=p.second.first; i<=p.second.second; i++){
             se += s[i];
@@ -52,7 +47,3 @@ public:
         return se;
     }
 };
-
-// 0, 1
-// 1, 2
-// 2, 3
