@@ -22,14 +22,6 @@ public:
         }
         reverse(right.begin(), right.end());
         
-        // for(int i=0; i<left.size(); i++){
-        //     cout<<left[i]<<" ";
-        // }
-        // cout<<endl;
-        // for(int i=0; i<left.size(); i++){
-        //     cout<<right[i]<<" ";
-        // }
-        
         int w = 0;
         
         for(int i=0; i<height.size(); i++){
