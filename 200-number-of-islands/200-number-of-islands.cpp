@@ -1,53 +1,32 @@
 class Solution {
 public:
-    void helper(vector<vector<char>>&grid, int i, int j, int row, int col){
-        grid[i][j]='2';
-        // print(grid);
-        if(i+1<row && grid[i+1][j]=='1'){
-            helper(grid, i+1, j, row, col);
-        }
-        if(j+1<col && grid[i][j+1]=='1'){
-            helper(grid, i, j+1, row, col);
-        }
+    void helper(vector<vector<char>>& grid, int i, int j, int m, int n){
+        grid[i][j]='0';
         if(i-1>=0 && grid[i-1][j]=='1'){
-            helper(grid, i-1, j, row, col);
+            helper(grid, i-1, j, m, n);
+        }
+        if(i+1<m && grid[i+1][j]=='1'){
+            helper(grid, i+1, j, m, n);
         }
         if(j-1>=0 && grid[i][j-1]=='1'){
-            helper(grid, i, j-1, row, col);
+            helper(grid, i, j-1, m, n);
         }
-        return ;
-    }
-    void print(vector<vector<char>>&grid){
-        int m = grid.size();
-        int n = grid[0].size();
-        
-        cout<<endl;
-        
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
-                cout<<grid[i][j]<<" ";
-            }
-            cout<<endl;
+        if(j+1<n && grid[i][j+1]=='1'){
+            helper(grid, i, j+1, m, n);
         }
-        cout<<endl;
+        
     }
     int numIslands(vector<vector<char>>& grid) {
-        int m = grid.size();
-        int n = grid[0].size();
-        int ans = 0;
-        
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
+        int cnt = 0;
+        for(int i=0; i<grid.size(); i++){
+            for(int j=0; j<grid[0].size(); j++){
                 if(grid[i][j]=='1'){
-                    ans++;
-                    //cout<<i<<": "<<j<<endl;
-                    helper(grid, i, j, m, n);
+                    cnt++;
+                    helper(grid, i, j, grid.size(), grid[0].size());
                 }
-               //print(grid);
-                
+                    
             }
         }
-        
-        return ans;
+        return cnt;
     }
 };
