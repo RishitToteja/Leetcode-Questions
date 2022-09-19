@@ -9,7 +9,7 @@ class Solution:
                 s = l[j]
                 t = re.search("\(.*\)", s)
                 file = s[0: t.start()]
-                key = s[t.start(): len(s)]
+                key = s[t.start(): t.end()]
                 if(key in d):
                     d[key].append(root+file)
                 else:
@@ -19,8 +19,6 @@ class Solution:
         for i in d.keys():
             if(len(d[i])>1):
                 ans.append(d[i])
-            # print("{}: ".format(i), end = "")
-            # print(*d[i], end = "\n")
         return ans;
             
                 
