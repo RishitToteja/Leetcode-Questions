@@ -24,7 +24,6 @@ public:
                         return mp[makeKey(key, *itr)];
                 }
             }
-            return "";
         }
         return "";
     }
