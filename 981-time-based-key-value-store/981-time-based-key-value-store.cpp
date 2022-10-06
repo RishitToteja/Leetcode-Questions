@@ -2,12 +2,8 @@ class TimeMap {
 public:
     unordered_map<string, string>mp;
     set<int, greater<int>> s;
-    string makeKey(string s1, int s2){
-        string ans="";
-        ans+=s1;
-        ans+=" ";
-        ans+=to_string(s2);
-        return ans;
+    string makeKey(string s1, int t){
+        return s1 + " " + to_string(t);
     }
     TimeMap() {
         
