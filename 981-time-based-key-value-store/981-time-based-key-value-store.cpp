@@ -5,15 +5,10 @@ public:
     string makeKey(string s1, int t){
         return s1 + " " + to_string(t);
     }
-    TimeMap() {
-        
-    }
-    
     void set(string key, string value, int timestamp) {
         mp[makeKey(key, timestamp)]=value;
         s.insert(timestamp);
     }
-    
     string get(string key, int timestamp) {
         if(mp.find(makeKey(key, timestamp)) != mp.end())
             return mp[makeKey(key, timestamp)];
