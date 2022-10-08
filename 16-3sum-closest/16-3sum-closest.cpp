@@ -19,7 +19,6 @@ public:
                 if(ans==INT_MAX || abs(target-curr) < abs(ans-target)){
                     ans = curr;
                 }
-                
                 if(curr-target>0)ei--;
                 else{
                     si++;
