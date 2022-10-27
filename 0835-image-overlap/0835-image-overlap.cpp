@@ -1,14 +1,5 @@
 class Solution {
 public:
-    int sum(vector<vector<int>>& img1){
-        int s = 0;
-        for(int i=0; i<img1.size(); i++){
-            for(int j=0; j<img1.size(); j++){
-                s+=img1[i][j];
-            }
-        }
-        return s;
-    }
     int helper(vector<vector<int>>& img1, vector<vector<int>>& img2) {
         int n = img1.size();
         int n2 = 2*n;
