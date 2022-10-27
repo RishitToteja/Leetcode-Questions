@@ -64,13 +64,6 @@ public:
         return ans;
     }
     int largestOverlap(vector<vector<int>>& img1, vector<vector<int>>& img2) {
-        // int a = sum(img1);
-        // int b = sum(img2);
-        // cout<<a<<endl;
-        // cout<<b<<endl;
-        // if(a==113&&b==112){
-        //     return 37;
-        // }
         return max(helper(img1, img2), helper(img2, img1));
     }
 };
