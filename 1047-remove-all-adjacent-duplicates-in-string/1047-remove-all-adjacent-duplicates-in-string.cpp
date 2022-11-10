@@ -1,44 +1,25 @@
-#include <stack>
-using namespace std;
-
 class Solution {
 public:
     string removeDuplicates(string s) {
+        stack<char>st;
+        st.push(s[0]);
         
-        stack<char>ans;
-        
-        ans.push(s[0]);
-        for(int i = 1; i<s.size(); i++){
-            if(!ans.empty()){
-                if(ans.top() != s[i]){
-                    ans.push(s[i]);
-                    //cout<<ans.top()<<" ";
-                }
-                else{
-                    ans.pop();
-                
-                }
+        for(int i=1; i<s.size(); i++){
+
+            if(!st.empty() && st.top()==s[i]){
+                st.pop();
             }
             else{
-                ans.push(s[i]);
+                st.push(s[i]);
             }
         }
-        
-        string new_s = "";
-        
-        while(!ans.empty()){
-            new_s += ans.top();
-            ans.pop();
+        string ans = "";
+        while(!st.empty()){
+            ans += st.top();
+            st.pop();
         }
+        reverse(ans.begin(), ans.end());
         
-        string rev = "";
-        
-        for(int i = new_s.size()-1; i>=0; i--){
-            rev += new_s[i];
-        }
-        
-        return rev;
-
-        
+        return ans;
     }
 };
